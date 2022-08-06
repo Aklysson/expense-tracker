@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import * as C from "./App.styles";
+import { TableArea } from "./components/TableArea";
 import { items } from "./data/items";
 import { filterListByMonth, getCurrentMonth } from "./helpers/dataFilter";
 import { Item } from "./types/item";
@@ -23,7 +24,7 @@ export function App(){
       <C.Body>
         {/* Área de  informações */}
         {/* Área de inserir informações */}
-        {/* Tabela De itens */}
+        <TableArea />
         </C.Body>
     </C.Container>
   )
