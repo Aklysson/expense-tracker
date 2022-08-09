@@ -1,6 +1,14 @@
 import * as C from "./styles";
+import { Item} from '../../types/item'
+import Income from '../../Assets/income.svg'
+import Outcome from "../../Assets/outcome.svg"
 
-export function TableArea(){
+type Props = {
+    list: Item[]
+}
+
+export function TableArea({list} : Props){
+      
     return(
         <C.Table>
            <thead>
@@ -12,9 +20,19 @@ export function TableArea(){
                 </tr>
            </thead>
            <tbody>
-            <tr>
-                oi
-            </tr>
+            
+                {list.map((item,index) => (
+
+                    <tr key={index}>
+                        <td>{item.date.toDateString()}</td>
+                        <td id={item.expense ? 'Outcome' : "Income"}>{item.expense ? 'Saídas' : 'Entradas'}</td>
+                        <td>{item.title}</td>
+                        <td>R$ {item.value.toFixed(2)}</td>
+                        <td><img src={item.expense ? Outcome : Income} alt="Income" /></td>
+
+                    </tr>
+                ))}
+            
            </tbody>
         </C.Table>
         

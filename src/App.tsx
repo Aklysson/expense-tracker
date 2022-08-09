@@ -1,31 +1,33 @@
-import { useEffect, useState } from "react";
-import * as C from "./App.styles";
-import { TableArea } from "./components/TableArea";
-import { items } from "./data/items";
-import { filterListByMonth, getCurrentMonth } from "./helpers/dataFilter";
-import { Item } from "./types/item";
+import { useState, useEffect } from 'react';
+import * as C from './App.styles';
+import { items } from './data/items';
+import { TableArea } from './components/TableArea';
+import { InfoArea } from './components/InfoArea';
+import { InputArea } from './components/InputArea';
+import { Item } from './types/item';
 
-export function App(){
-  const [list,setList] = useState(items)
-  const [filtedList,setFiltedList] = useState<Item[]>([])
-  const [currentMonth,setCurrentMonth] = useState(getCurrentMonth())
+export const App =() => {
+  const [list, setList] = useState(items);
 
-  useEffect(() => {
-    setFiltedList(filterListByMonth(list, currentMonth))
-
-  } , [list, currentMonth])
-
+  const handleAddItem = (item: Item) => {
+    let newList = [...list]
+    newList.push(item)
+    setList(newList)
+  }
 
   return (
     <C.Container>
       <C.Header>
-        <C.HeaderText> Sistema Financeiro</C.HeaderText>
+        <C.HeaderText>Sistema Financeiro</C.HeaderText>
       </C.Header>
       <C.Body>
-        {/* Área de  informações */}
-        {/* Área de inserir informações */}
-        <TableArea />
-        </C.Body>
+        <InfoArea list={list}/>
+        <InputArea onAdd={handleAddItem}/>
+        <TableArea list={list} />
+
+      </C.Body>
     </C.Container>
-  )
+  );
 }
+
+export default App;

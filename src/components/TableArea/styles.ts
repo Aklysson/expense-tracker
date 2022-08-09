@@ -8,6 +8,23 @@ export const Table = styled.table`
  border-radius: 10px;
  width: 100%;
  margin-top: 20px;
+
+    #Income {
+        background: #78f000;
+        border: 3px solid #00f000;
+        border-radius: 5px;
+        padding: 5px;
+    }
+    #Outcome {
+        background: #e87d7d;
+        border-radius: 5px;
+        padding: 5px;
+        border: 3px solid #dd3c3c;
+
+    }
+
+ 
+    
 `
 
 export const TableHeaderColumn = styled.th<{width?: number}>`
