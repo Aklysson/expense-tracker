@@ -28,13 +28,15 @@ export function InfoArea({list}:PropsList){
     console.log(totalOutcome)
 
     let total = Number(totalIncome) - Number(totalOutcome)
-    console.log(total)
+    console.log((total))
+
+    let totalFixed = total >= 0 ? (total).toFixed(2) : total + '(Débito)'
    return(
     <Container>
        
 <Dashboard title="Entradas:" value={totalIncome} img={Income}/>
 <Dashboard title="Saídas:" value={totalOutcome} img={Outcome}/>
-<Dashboard title="Total:" value={total} img={Total}/>
+<Dashboard title="Total:" value={totalFixed} img={Total}/>
     </Container>
    ) 
 }

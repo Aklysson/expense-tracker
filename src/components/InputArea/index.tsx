@@ -72,11 +72,13 @@ export function InputArea({onAdd}:InputProps){
            onChange={() => setIsExpense(!isExpense)}
            />
         </C.RadioGroup>
-        <C.Input  type="text" 
+        <C.Input  type="text"
+        placeholder="Insira um título" 
         value={titleField} 
         onChange={e => setTitleField(e.target.value)} />       
         <C.Input type="number"
-         value={valueField} 
+         placeholder="Insira um valor" 
+         value={valueField > 0 ? valueField : ''} 
          onChange={e => setValueField(parseFloat(e.target.value))}
         /> <C.button
         onClick={handleAddEvent}>Enviar</C.button>

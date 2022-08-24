@@ -8,22 +8,18 @@ export const Table = styled.table`
  border-radius: 10px;
  width: 100%;
  margin-top: 20px;
+ #category{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6px 0px 0px;
+ }
 
-    #Income {
-        background: #78f000;
-        border: 3px solid #00f000;
-        border-radius: 5px;
-        padding: 5px;
+ .ids{
+    :hover{
+        cursor: pointer;
     }
-    #Outcome {
-        background: #e87d7d;
-        border-radius: 5px;
-        padding: 5px;
-        border: 3px solid #dd3c3c;
-
-    }
-
- 
+ }
     
 `
 
@@ -31,5 +27,4 @@ export const TableHeaderColumn = styled.th<{width?: number}>`
     padding: 10px 0px;
     text-align: left;
     width: ${props => props.width ? `${props.width}px` : 'auto'};
-    
 `

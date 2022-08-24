@@ -9,13 +9,13 @@ padding: 0px 10px;
 display: flex;
 flex-direction: column;
 align-items: center;
-min-width: 10rem;
-margin: 1rem;
+min-width: 15rem;
 margin-top: 0;
 
 .top {
     display: flex;
-    gap: 2rem;
+    justify-content: space-between;
+    width: 90%;
 
 }
 `

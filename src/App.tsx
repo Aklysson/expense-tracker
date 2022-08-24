@@ -15,6 +15,12 @@ export const App =() => {
     setList(newList)
   }
 
+   const deleteItem = (id:number) => {
+    let newList = [...list]
+    newList.splice(id,1)
+    setList(newList)
+  }
+
   return (
     <C.Container>
       <C.Header>
@@ -23,7 +29,7 @@ export const App =() => {
       <C.Body>
         <InfoArea list={list}/>
         <InputArea onAdd={handleAddItem}/>
-        <TableArea list={list} />
+        <TableArea list={list} handleDelete={deleteItem}/>
 
       </C.Body>
     </C.Container>
